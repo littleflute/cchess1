@@ -1,7 +1,40 @@
 <!DOCTYPE html>	  
 <html>  
+ <style>
+  .navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+    z-index: 2;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+
+ </style>
 <body> 
-ECHO is on.
+<div class="navbar">
+  <a href=".">Home</a>
+  <a target="_blank"  href="https://github.com/shanuan/blog/edit/master/timeline.html">v0.0.4</a>
+  <a target="_blank" href="https://www.w3schools.com/howto/howto_css_fixed_menu.asp">ref1</a>
+  <a target="_blank" href="https://www.w3schools.com/howto/howto_css_timeline.asp">ref2</a>
+</div>
+ 
 <br> 
 <div id="DivCurTime"></div> 
 <br> 
@@ -12,18 +45,18 @@ ECHO is on.
 <button onclick="moveMS(0.01)" type="button">+10ms</button>  
 <button onclick="moveMS(0.05)" type="button">+50ms</button>  
 <button onclick="setCurTime(5)" type="button">Set time position to 5 seconds</button><br>   
-<button id = "btn1" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_00_00-00_06_03.mp4')">1:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_00_00-00_06_03.mp4</button> 
-<button id = "btn2" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_06_00-00_12_03.mp4')">2:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_06_00-00_12_03.mp4</button> 
-<button id = "btn3" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_12_00-00_18_03.mp4')">3:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_12_00-00_18_03.mp4</button> 
-<button id = "btn4" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_18_00-00_24_03.mp4')">4:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_18_00-00_24_03.mp4</button> 
-<button id = "btn5" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_24_00-00_30_03.mp4')">5:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_24_00-00_30_03.mp4</button> 
-<button id = "btn6" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_30_00-00_36_03.mp4')">6:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_30_00-00_36_03.mp4</button> 
-<button id = "btn7" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_36_00-00_42_03.mp4')">7:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_36_00-00_42_03.mp4</button> 
-<button id = "btn8" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_42_00-00_48_03.mp4')">8:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_42_00-00_48_03.mp4</button> 
-<button id = "btn9" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_48_00-00_54_03.mp4')">9:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_48_00-00_54_03.mp4</button> 
-<button id = "btn10" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_54_00-00_59_03.mp4')">10:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_54_00-00_59_03.mp4</button> 
+<button id = "btn1" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_00_00-00_06_03.mp4')">1:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_00_00-00_06_03.mp4</button> 
+<button id = "btn2" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_06_00-00_12_03.mp4')">2:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_06_00-00_12_03.mp4</button> 
+<button id = "btn3" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_12_00-00_18_03.mp4')">3:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_12_00-00_18_03.mp4</button> 
+<button id = "btn4" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_18_00-00_24_03.mp4')">4:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_18_00-00_24_03.mp4</button> 
+<button id = "btn5" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_24_00-00_30_03.mp4')">5:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_24_00-00_30_03.mp4</button> 
+<button id = "btn6" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_30_00-00_36_03.mp4')">6:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_30_00-00_36_03.mp4</button> 
+<button id = "btn7" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_36_00-00_42_03.mp4')">7:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_36_00-00_42_03.mp4</button> 
+<button id = "btn8" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_42_00-00_48_03.mp4')">8:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_42_00-00_48_03.mp4</button> 
+<button id = "btn9" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_48_00-00_54_03.mp4')">9:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_48_00-00_54_03.mp4</button> 
+<button id = "btn10" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_54_00-00_59_03.mp4')">10:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_54_00-00_59_03.mp4</button> 
 <br> 
-<button id = "btn11" onclick="play('01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_59_00-.mp4')">11:01ÏóÆåÆ­×ÅÓë¶Ô²ßÏµÁÐ-Ë³ÊÖÅÚ_±êÇå 00_59_00-.mp4</button> 
+<button id = "btn11" onclick="play('01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_59_00-.mp4')">11:01è±¡æ£‹éª—ç€ä¸Žå¯¹ç­–ç³»åˆ—-é¡ºæ‰‹ç‚®_æ ‡æ¸… 00_59_00-.mp4</button> 
 <br> 
 <video id="myVideo" width="720" height="480" controls> 
  <source src="0.mp4" type="video/mp4">  
