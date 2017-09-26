@@ -1,0 +1,53 @@
+<!DOCTYPE html>	  
+<html>  
+<body> 
+ECHO is on.
+<br> 
+<div id="DivCurTime"></div> 
+<br> 
+<button onclick="getCurTime()" type="button">Get current time position</button>  
+<button onclick="setCurTime(0)" type="button">00</button><br>   
+<button onclick="moveMS(-0.05)" type="button">Time-50ms</button>  
+<button onclick="moveMS(-0.01)" type="button">-10ms</button>  
+<button onclick="moveMS(0.01)" type="button">+10ms</button>  
+<button onclick="moveMS(0.05)" type="button">+50ms</button>  
+<button onclick="setCurTime(5)" type="button">Set time position to 5 seconds</button><br>   
+<button id = "btn1" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_00_00-00_06_03.mp4')">1:01象棋骗着与对策系列-顺手炮_标清 00_00_00-00_06_03.mp4</button> 
+<button id = "btn2" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_06_00-00_12_03.mp4')">2:01象棋骗着与对策系列-顺手炮_标清 00_06_00-00_12_03.mp4</button> 
+<button id = "btn3" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_12_00-00_18_03.mp4')">3:01象棋骗着与对策系列-顺手炮_标清 00_12_00-00_18_03.mp4</button> 
+<button id = "btn4" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_18_00-00_24_03.mp4')">4:01象棋骗着与对策系列-顺手炮_标清 00_18_00-00_24_03.mp4</button> 
+<button id = "btn5" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_24_00-00_30_03.mp4')">5:01象棋骗着与对策系列-顺手炮_标清 00_24_00-00_30_03.mp4</button> 
+<button id = "btn6" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_30_00-00_36_03.mp4')">6:01象棋骗着与对策系列-顺手炮_标清 00_30_00-00_36_03.mp4</button> 
+<button id = "btn7" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_36_00-00_42_03.mp4')">7:01象棋骗着与对策系列-顺手炮_标清 00_36_00-00_42_03.mp4</button> 
+<button id = "btn8" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_42_00-00_48_03.mp4')">8:01象棋骗着与对策系列-顺手炮_标清 00_42_00-00_48_03.mp4</button> 
+<button id = "btn9" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_48_00-00_54_03.mp4')">9:01象棋骗着与对策系列-顺手炮_标清 00_48_00-00_54_03.mp4</button> 
+<button id = "btn10" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_54_00-00_59_03.mp4')">10:01象棋骗着与对策系列-顺手炮_标清 00_54_00-00_59_03.mp4</button> 
+<br> 
+<button id = "btn11" onclick="play('01象棋骗着与对策系列-顺手炮_标清 00_59_00-.mp4')">11:01象棋骗着与对策系列-顺手炮_标清 00_59_00-.mp4</button> 
+<br> 
+<video id="myVideo" width="720" height="480" controls> 
+ <source src="0.mp4" type="video/mp4">  
+Your browser does not support HTML5 video. 
+</video>  
+<script>  
+var vid = document.getElementById("myVideo"); 
+function play(i) {
+    vid.src=i; 
+    vid.load();
+    vid.play(); 
+}
+function getCurTime() {  
+   document.getElementById("DivCurTime").innerHTML= vid.currentTime; 
+}   
+function setCurTime(t) { 
+   vid.currentTime=t;  
+   getCurTime();
+}  
+function moveMS(ms) { 
+  vid.currentTime+=ms;
+  getCurTime();  
+}   
+var btn1 =  document.getElementById("btn1");	
+btn1.click(); 	
+</script> 
+</body> 
